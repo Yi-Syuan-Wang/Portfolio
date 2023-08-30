@@ -33,12 +33,6 @@ My2 = Rawdata.ACHANNEL.MomentMy2;
 Mz2 = Rawdata.ACHANNEL.MomentMz2;
 
 Com = Rawdata.XYZPOS.CentreOfMass(:,3);
-%Joint = struct('Ang', {Rawdata.XYZPOS.RAnkleAngles(:,1) Rawdata.XYZPOS.RKneeAngles(:,1) Rawdata.XYZPOS.RHipAngles(:,1)}); % Joint.Ang = {Ankle, Knee, Hip}
-%Segment = struct('Axis',{Rawdata.XYZPOS.RTOO cat(3,Rawdata.XYZPOS.RFOO, Rawdata.XYZPOS.RFOA, Rawdata.XYZPOS.RFOL, Rawdata.XYZPOS.RFOP)... % Segment.Axis = {Toe(O), Foot(O,A,L,P), Tib, Fem}
-    %cat(3,Rawdata.XYZPOS.RTIO, Rawdata.XYZPOS.RTIA, Rawdata.XYZPOS.RTIL, Rawdata.XYZPOS.RTIP)...
-    %cat(3,Rawdata.XYZPOS.RFEO, Rawdata.XYZPOS.RFEA, Rawdata.XYZPOS.RFEL, Rawdata.XYZPOS.RFEP)},...
-    %'F',{[Rawdata.ACHANNEL.ForceFx2 Rawdata.ACHANNEL.ForceFy2 Rawdata.ACHANNEL.ForceFz2] [] [] []},...
-    %'M',{[Rawdata.ACHANNEL.MomentMx2 Rawdata.ACHANNEL.MomentMy2 Rawdata.ACHANNEL.MomentMz2] [] [] []});
 Ang = [Rawdata.XYZPOS.RHipAngles(:,1) Rawdata.XYZPOS.RKneeAngles(:,1) Rawdata.XYZPOS.RAnkleAngles(:,1)]; % Hip flexion, knee flexion and ankle dorsiflexion as positive
 Fem = cat(3,Rawdata.XYZPOS.RFEO, Rawdata.XYZPOS.RFEA, Rawdata.XYZPOS.RFEL, Rawdata.XYZPOS.RFEP);
 Tib = cat(3,Rawdata.XYZPOS.RTIO, Rawdata.XYZPOS.RTIA, Rawdata.XYZPOS.RTIL, Rawdata.XYZPOS.RTIP);
